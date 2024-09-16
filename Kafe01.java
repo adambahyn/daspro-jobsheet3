@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Kafe01 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -17,12 +18,16 @@ public class Kafe01 {
         System.out.print("Masukkan jumlah pembelian roti: ");
         jmlRoti = input.nextInt();
 
-        totalHarga = (jmlKopi * hargaKopi) + (jmlTeh * hargaTeh) + (jmlRoti * hargaRoti);
+        double totalHarga = (jmlKopi * hargaKopi) + (jmlTeh * hargaTeh) + (jmlRoti * hargaRoti);
 
-        nominalbayar = totalHarga - (diskon * totalHarga);
+        byte totalByte = (byte) totalHarga;
+
+        double nominalbayar = totalHarga - (diskon * totalByte);
+
+        int nominalInt = (int) nominalbayar;
 
         System.out.println("Keanggotaan " + keanggotaan);
         System.out.println("Item pembelian " + jmlKopi + " Kopi, " + jmlTeh + " Teh, " + jmlRoti + " Roti");
-        System.out.println("Nominal Bayar Rp " + nominalbayar);
+        System.out.println("Nominal Bayar Rp " + nominalInt);
     }
 }
